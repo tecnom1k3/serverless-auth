@@ -1,5 +1,7 @@
 <?php
 
+use App\Providers\LoginServiceProvider;
+
 require_once __DIR__.'/../vendor/autoload.php';
 
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
@@ -95,6 +97,7 @@ $app->configure('app');
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(RaditzFarhan\LumenCommandGenerator\ServiceProvider::class);
+$app->register(LoginServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

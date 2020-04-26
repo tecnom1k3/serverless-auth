@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 
+/**
+ * Class IndexController
+ * @package App\Http\Controllers
+ */
 class IndexController extends Controller
 {
     /**
@@ -11,7 +15,7 @@ class IndexController extends Controller
      *
      * @return JsonResponse
      */
-    public function index()
+    public function index(): JsonResponse
     {
         return response()->json([
             'timestamp' => time()

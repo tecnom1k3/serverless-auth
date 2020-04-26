@@ -1,6 +1,6 @@
 <?php
 
-/** @var \Laravel\Lumen\Routing\Router $router */
+use Laravel\Lumen\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +13,21 @@
 |
 */
 
-$router->get('/', 'IndexController@index');
+/** @var Router $router */
+
+$router->group([], function () use ($router) {
+    $router->get('/', [
+        'as' => 'default',
+        'uses' => 'IndexController@index'
+    ]);
+});
+
+$router->group([
+    'prefix' => 'login',
+    'namespace' => 'Login',
+], function () use ($router) {
+    $router->post('/', [
+        'as' => 'login',
+        'uses' => 'LoginController@login'
+    ]);
+});
