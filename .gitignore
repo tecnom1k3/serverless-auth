@@ -1,0 +1,11 @@
+terraform/.terraform
+.idea
+adminKey
+vendor
+Homestead.json
+Homestead.yaml
+.env
+.phpunit.result.cache
+.serverless
+schema.mwb.bak
+credentials.ini
