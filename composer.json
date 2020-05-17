@@ -1,9 +1,10 @@
 {
     "name": "digitec/auth",
     "require": {
+        "php": "^7.4",
+        "aws/aws-sdk-php-laravel": "^3.5",
         "bref/bref": "^0.5.23",
-        "laravel/lumen-framework": "^7.0",
-        "php": "^7.2.5"
+        "laravel/lumen-framework": "^7.0"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.9.1",

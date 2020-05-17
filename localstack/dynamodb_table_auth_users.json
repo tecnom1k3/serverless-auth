@@ -1,0 +1,42 @@
+{
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "uid",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "userName",
+            "AttributeType": "S"
+        }
+    ],
+    "GlobalSecondaryIndexes": [
+        {
+            "IndexName": "UserIndex",
+            "Projection": {
+                "ProjectionType": "KEYS_ONLY"
+            },
+            "KeySchema": [
+                {
+                    "KeyType": "HASH",
+                    "AttributeName": "userName"
+                },
+                {
+                    "KeyType": "RANGE",
+                    "AttributeName": "uid"
+                }
+            ]
+        }
+    ],
+    "TableName": "auth_users",
+    "KeySchema": [
+        {
+            "KeyType": "HASH",
+            "AttributeName": "uid"
+        },
+        {
+            "KeyType": "RANGE",
+            "AttributeName": "userName"
+        }
+    ],
+    "BillingMode": "PAY_PER_REQUEST"
+}

@@ -1,6 +1,10 @@
 <?php
 
+use App\Providers\DynamoDbClientProvider;
 use App\Providers\LoginServiceProvider;
+use App\Providers\UserDaoProvider;
+use App\Providers\UserServiceProvider;
+use Aws\Laravel\AwsServiceProvider;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -98,6 +102,10 @@ $app->configure('app');
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(RaditzFarhan\LumenCommandGenerator\ServiceProvider::class);
 $app->register(LoginServiceProvider::class);
+$app->register(UserServiceProvider::class);
+$app->register(AwsServiceProvider::class);
+$app->register(UserDaoProvider::class);
+$app->register(DynamoDbClientProvider::class);
 
 /*
 |--------------------------------------------------------------------------

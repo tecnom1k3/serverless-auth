@@ -31,3 +31,13 @@ $router->group([
         'uses' => 'LoginController@login'
     ]);
 });
+
+$router->group([
+    'prefix' => 'user',
+    'namespace' => 'User'
+               ], function () use ($router) {
+    $router->get('/', [
+        'as' => 'listUsers',
+        'uses' => 'UserController@index'
+    ]);
+});

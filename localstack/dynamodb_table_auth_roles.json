@@ -1,0 +1,16 @@
+{
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "id",
+            "AttributeType": "N"
+        }
+    ],
+    "TableName": "auth_roles",
+    "KeySchema": [
+        {
+            "KeyType": "HASH",
+            "AttributeName": "id"
+        }
+    ],
+    "BillingMode": "PAY_PER_REQUEST"
+}
