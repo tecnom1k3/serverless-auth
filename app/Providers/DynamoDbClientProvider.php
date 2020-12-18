@@ -29,12 +29,14 @@ class DynamoDbClientProvider extends ServiceProvider implements
             function ($app) {
                 /** @var Sdk $sdk */
                 $sdk = $app->make('aws');
-                return $sdk->createClient(
-                    'DynamoDb',
-                    [
-                        'endpoint' => 'http://host.docker.internal:4569', //TODO: parametrize for given environment
-                    ]
-                );
+
+                $dynamoDBConfig = [];
+
+                if (env('DYNAMODB_ENDPOINT')) {
+                    $dynamoDBConfig['endpoint'] = env('DYNAMODB_ENDPOINT');
+                }
+
+                return $sdk->createClient('DynamoDb', $dynamoDBConfig);
             }
         );
     }
